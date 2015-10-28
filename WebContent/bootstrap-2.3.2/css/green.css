@@ -2,7 +2,7 @@
 margin-left:auto;
 margin-right:auto;
 max-width: 1000px;
-background: #F8F8F8;
+background:rgba(250,250,250,0.5);
 padding: 30px 30px 20px 30px;
 font: 12px Arial, Helvetica, sans-serif;
 border-radius: 5px;
@@ -15,7 +15,7 @@ padding: 20px 40px 20px 40px;
 display: block;
 margin: -30px -30px 10px -30px;
 color: #FFF;
-background: #9DC45F;
+background: rgba(153,225,159,0.49);
 border-radius: 5px 5px 0px 0px;
 -webkit-border-radius: 5px 5px 0px 0px;
 -moz-border-radius: 5px 5px 0px 0px;
@@ -36,7 +36,7 @@ width: 100%;
 padding: 0px 0px 0px 5px;
 margin-top: 2px;
 border: 1px solid #E5E5E5;
-background: #FBFBFB;
+background: rgba(238, 238, 238, 0.2);
 outline: 0;
 -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
 box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
@@ -58,7 +58,7 @@ width:100%;
 height:30px;
 }
 .smart-green .button {
-background-color: #9DC45F;
+background-color: rgba(177,207,127,0.5);
 border-radius: 5px;
 -webkit-border-radius: 5px;
 -moz-border-border-radius: 5px;
