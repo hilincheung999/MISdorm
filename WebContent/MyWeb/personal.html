@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宿舍管家｜个人资料</title>
+<style type="text/css">
+body {
+	background-image: url(img/mywork2.jpeg);
+}
+@media (max-width:767px) {
+body {
+	background: #86B299;
+}
+}
+h1 {
+	color: #fff;
+	font-family: Arial;
+	font-weight: normal;
+	margin: 1em auto 0px;
+}
+</style>
+<!-- Bootstrap -->
+<link href="../bootstrap-2.3.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../bootstrap-2.3.2/css/style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../bootstrap-2.3.2/css/tabs.css" />
+<link rel="stylesheet" type="text/css" href="../bootstrap-2.3.2/css/tabstyles.css" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+
+    
+</head>
+<body>
+<div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top"> 
+    
+    <!-- Brand and toggle get grouped for better mobile display -->
+     <nav class="navbar navbar-default  navbar-fixed-top">
+<div class="container-fluid">   
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="DormManager.html">主页</a></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="defaultNavbar1" style="width:1227px;">
+      <ul class="nav navbar-nav">            
+        <li ><a href="water.html">预约送水<span class="sr-only">(current)</span></a></li>
+        <li><a href="note.html">留言板</a></li>       
+        <li><a href="repair.html">预约维修</a></li>
+        <li><a href="leaveschool.html">去向表填写</a></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">常用链接<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://www.cumt.edu.cn">矿大主页</a></li>          
+            <li class="divider"></li>
+            <li><a href="http://sm.cumt.edu.cn">学院主页</a></li>
+            <li class="divider"></li>
+            <li><a href="http://jwb.cumt.edu.cn">教务处</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">&nbsp;搜索</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">        
+        <li id="a"></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">        
+        <li class=""><a href="login.html">退出登录</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+</nav>
+</div>
+<br>
+<br>
+<div class="container-fluid">
+  <div class="tabbable tabs-left">
+  <section>
+    <div class="tabs tabs-style-iconbox ">
+      <nav>
+        <ul>
+          <li><a href="#section-iconbox-1" class="icon icon-home"><span>个人资料</span></a></li>
+          <li><a href="#section-iconbox-2" class="icon icon-gift" id="water"><span>送水订单</span></a></li>
+          <li><a href="#section-iconbox-3" class="icon icon-config"><span>维修订单 </span></a></li>
+          <li><a href="#section-iconbox-4" class="icon icon-coffee"><span>离校记录</span></a></li>
+          <li><a href="#section-iconbox-5" class="icon icon-upload"><span>我的留言</span></a></li>
+        </ul>
+      </nav>
+      <div class="content-wrap">
+      <section id="section-iconbox-1">      
+          <div class="row-fluid">
+          <form class="form-horizontal" method="post" action="../enroll">
+            <fieldset>
+              <div class="control-group">           
+                <!-- Prepended text-->
+                <label class="control-label">姓名</label>
+                <div class="controls">
+                  <div class="input-prepend" id="f"> <span class="add-on"></span>
+                   
+                  </div>  
+                </div>
+              </div>
+              <br>             
+              <div class="control-group">              
+                <!-- Prepended text-->
+                <label class="control-label">联系方式</label>
+                <div class="controls">
+                  <div class="input-prepend" id="g">
+                   <span class="add-on"></span>
+                   
+                  </div>                 
+                </div>
+              </div>
+              <br>    
+                 
+              <div class="control-group "> 
+                <!-- Prepended text-->
+                <label for="dorm" class="control-label">宿舍楼</label>
+                <div class="controls " id="j">         
+       <!-- <select id="dorm"  style="width:280px;height=50px;" name="dormapt">  
+         <option value ="竹一" >竹一</option> 
+          <option value ="竹二">竹二</option>  
+          <option value="竹三">竹三</option>  
+          <option value="竹四">竹四</option>  
+          </select>              -->                      
+                </div>
+              </div>
+              <br>            
+                   <div class="control-group"> 
+                <!-- Prepended text-->
+                <label class="control-label">宿舍号</label>
+                <div class="controls">
+                  <div class="input-prepend" id="i"> <span class="add-on"></span>
+                  
+                    
+                  </div>                
+                </div>
+              </div>
+              <br>            
+              <div class="control-group"> 
+                <!-- Prepended text-->
+                <label class="control-label"> 邮箱地址</label>
+                <div class="controls">
+                  <div class="input-prepend" id="h"> <span class="add-on"></span>
+                  
+                    
+                  </div> 
+                  <div id="myDiv" style="color:red"></div>               
+                </div>
+              </div>     
+              <br>
+              <div class="control-group"> 
+                <!-- Prepended text-->
+                <div class="controls">
+                  <div class="input-prepend"> <span class="add-on"></span>
+                    <button  class="btn btn-default" type="submit">提交</button>
+                  </div>                
+                </div>
+              </div>        
+            </fieldset>
+          </form>
+        </div>
+      
+      </section>
+      
+      <section id="section-iconbox-2">
+       <div class="container">
+ 
+   <div class="navbar">
+     <div class="nav-tabs">
+       <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active" id="unquery"><a href="#watertab1" data-toggle="tab">未支付的送水单</a></li>
+        <li id="okquery"><a href="#watertab2" data-toggle="tab">已支付的送水单</a></li>    
+     </ul>
+     
+    <div class="tab-content">
+          <div class="tab-pane active" id="watertab1" >
+          <table class="table table-striped">
+			<tr>
+				<td style="width: 50px;">订单号</td>
+				<td style="width: 50px;">联系人</td>
+				<td style="width: 50px;">宿舍楼</td>
+				<td style="width: 50px;">宿舍号</td>
+				<td style="width: 50px;">联系方式</td>
+				<td style="width: 50px;">送水时间</td>				
+			</tr>
+		     </table><br><br>
+         <ul id="ul5" class="pager">
+        <li><a href = "#" onclick="first6()">首页</a></li>
+        <li><a href = "#" class="previous" id="previous" onclick="previous6()" >上一页</a></li>
+                     第<input type="text" class="p" id="page5" value="1" size="3"/>页
+        <li><a href = "#" class="next" id="next" onclick="next6()" >下一页</a></li>
+        <li><a href="#" onclick="last6()">尾页</a></li>
+                   共<label class="total">0</label>条记录
+                   共<label class="pageCount">0</label>页</ul>                    
+          </div>
+          <div class="tab-pane" id="watertab2">
+              <table class="table table-striped">
+		<tr>
+			<td style="width: 50px;">订单号</td>
+			<td style="width: 50px;">联系人</td>
+			<td style="width: 50px;">宿舍楼</td>
+			<td style="width: 50px;">宿舍号</td>
+			<td style="width: 50px;">联系方式</td>
+			<td style="width: 50px;">送水时间</td>
+		</tr>
+	     </table><br><br>
+		 <ul class="pager">
+        <li><a href = "#" onclick="first1()">首页</a></li>
+        <li><a href = "#" class="previous" id="previous1" onclick="previous1()" >上一页</a></li>
+                    第<input type="text" id="page1" value="1" size="3"/>页
+        <li><a href = "#" class="next1" id="next1" onclick="next1()" >下一页</a></li>
+        <li><a href="#" onclick="last1()">尾页</a></li>
+                   共<label id="total1">0</label>条记录
+                   共<label id="pageCount1">0</label>页
+        </ul>   
+          </div>
+          </div>  
+    </div>
+    </div>
+   </div>
+   </div>
+ <br><br><br><br><br><br><br>
+<br><br><br><br>
+     
+      </section>
+      <section id="section-iconbox-3">
+       <div class="container">
+   <div class="navbar">
+     <div class="nav-tabs">
+       <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active" id="unquery2"><a href="#repairtab1" data-toggle="tab">未完成的维修单</a></li>
+        <li id="okquery2"><a href="#repairtab2" data-toggle="tab">已完成的维修单</a></li>    
+     </ul>
+     
+    <div class="tab-content">
+          <div class="tab-pane active" id="repairtab1">
+          <table class="table table-striped">
+			<tr>
+				<td style="width: 50px;">订单号</td>
+				<td style="width: 50px;">联系人</td>
+				<td style="width: 50px;">宿舍楼</td>
+				<td style="width: 50px;">宿舍号</td>
+				<td style="width: 50px;">联系方式</td>
+				<td style="width: 50px;">描述</td>	
+			</tr>
+		     </table><br><br>
+		 <ul id="ul1" class="pager">
+        <li><a href = "#" onclick="first()">首页</a></li>
+        <li><a href = "#" class="previous" id="previous2" onclick="previous()" >上一页</a></li>
+                    第<input type="text" id="page2" class="p" value="1" size="3"/>页
+        <li><a href = "#" class="next2" id="next2" onclick="next()" >下一页</a></li>
+        <li><a href="#" onclick="last()">尾页</a></li>
+                   共<label class="total" id="total">0</label>条记录
+                   共<label class="pageCount" id="pageCount">0</label>页
+        </ul>   
+          </div>
+          <div class="tab-pane" id="repairtab2">
+              <table class="table table-striped">
+		<tr>
+			<td style="width: 50px;">订单号</td>
+			<td style="width: 50px;">联系人</td>
+			<td style="width: 50px;">宿舍楼</td>
+			<td style="width: 50px;">宿舍号</td>
+			<td style="width: 50px;">联系方式</td>
+			<td style="width: 50px;">描述</td>			
+		</tr>
+	     </table><br><br>
+	     <ul id="ul2" class="pager">
+        <li><a href = "#" onclick="first3()">首页</a></li>
+        <li><a href = "#" class="previous" id="previous3" onclick="previous3()" >上一页</a></li>
+                     第<input type="text" class="p" id="page3" value="1" size="3"/>页
+        <li><a href = "#"  class="next3" id="next3" onclick="next3()" >下一页</a></li>
+        <li><a href="#" onclick="last3()">尾页</a></li>
+                   共<label  class="total" id="total">0</label>条记录
+                   共<label class="pageCount" id="pageCount3">0</label>页</ul>  
+          </div>
+          </div>        
+    </div>
+    </div>
+   </div>
+   </div>
+   
+  <br><br><br><br><br><br><br>
+<br><br><br><br>
+      </section>
+      <section id="section-iconbox-4">
+  <div class="container">
+   <div class="navbar">
+     <div class="nav-tabs">
+       <div class="container">    
+        <h1>我的离校记录</h1>
+         <div class="tab-content" id="leave">          
+          <table  class="table table-striped">
+			<tr><td>离校去向</td><td>离校时间</td><td>返校时间</td><td>联系电话</td></tr>
+		     </table>  <br><br>
+         <ul id="ul3" class="pager">
+        <li><a href = "#" onclick="first4()">首页</a></li>
+        <li><a href = "#" class="previous" id="previous4" onclick="previous4()" >上一页</a></li>
+                     第<input type="text" class="p" id="page4" value="1" size="3"/>页
+        <li><a href = "#" class="next" id="next4" onclick="next4()" >下一页</a></li>
+        <li><a href="#" onclick="last4()">尾页</a></li>
+                   共<label class="total">0</label>条记录
+                   共<label class="pageCount">0</label>页</ul>  
+          </div> 
+    </div>   
+    </div>
+   </div>
+   </div>
+      </section>
+      <section id="section-iconbox-5">
+<div class="container">
+   <div class="navbar">
+     <div class="nav-tabs">
+       <div class="container">
+     
+<h1>我的留言</h1>
+    <div class="tab-content" id="note">         
+          <table class="table table-striped">
+			<tr><td>留言标题</td><td>留言内容</td><td>留言日期</td><td>留言者姓名</td></tr>
+		     </table>    
+ 
+<br><br>
+      <ul id="ul4" class="pager">
+        <li><a href = "#" onclick="first5()">首页</a></li>
+        <li><a href = "#" class="previous" id="previous5" onclick="previous5()" >上一页</a></li>
+                     第<input type="text" class="p" id="page5" value="1" size="3"/>页
+        <li><a href = "#" class="next" id="next5" onclick="next5()" >下一页</a></li>
+        <li><a href="#" onclick="last5()">尾页</a></li>
+                   共<label class="total">0</label>条记录
+                   共<label class="pageCount">0</label>页</ul>       
+<br><br><br>
+          </div>                            
+    </div>  
+    </div>
+   </div>
+   </div>  
+
+      </section>
+    </div>
+    <!-- /content -->
+    </div>
+    <!-- /tabs --> 
+  </section>
+</div>
+</div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="text-center">
+          <p>中国矿业大学南湖校区<br />
+            &copy;Copyright 2015 - CUMT. Designed by <a href="http://bootstraptaste.com">Bootstraptaste</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../bootstrap-2.3.2/js/jquery-2.1.4.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="../bootstrap-2.3.2/js/bootstrap.js"></script> 
+<script src="../bootstrap-2.3.2/js/cbpFWTabs.js"></script> 
+<script src="../bootstrap-2.3.2/js/water.js"></script>
+<script src="../bootstrap-2.3.2/js/repair.js"></script>
+<script src="../bootstrap-2.3.2/js/myleave.js"></script>
+<script src="../bootstrap-2.3.2/js/mysg.js"></script>
+<script type="text/javascript" src="js/login1.js"></script>
+<script language="JavaScript" src="js/ajaxs.js"></script> 
+ 
+<script>
+			(function() {
+
+				[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+					new CBPFWTabs( el );
+				});
+
+			})();
+		</script>
+		<script type="text/javascript">
+    $(document).ready(function(){
+	
+	
+			$.get("../showperson", { }, function(m){
+				//�ص�����    ��������˷��Ͳ���
+				//$("table tr:gt(0)").remove();//���˵�һ�е����ݺ������ж�ɾ��
+				
+			
+				var tbl = "";
+				
+				for (var i = 0; i < m.rows.length; i++) {
+					var r = m.rows[i];
+					tbl += " <input class='span6'  name='stuname' type='text' value='"+r.stuname+"'>" ;
+				}
+				
+				$("#f").append(tbl);
+		
+	var tba = "";
+				
+				for (var i = 0; i < m.rows.length; i++) {
+					var r = m.rows[i];
+					tba += "<input class='span6' name='phone' type='text' value='"+r.phone+"'>";
+				}
+				
+				$("#g").append(tba);
+				
+				
+			
+var tbb = "";
+				
+				for (var i = 0; i < m.rows.length; i++) {
+					var r = m.rows[i];
+					tbb += "<input class='span6' name='email' type='text' value='"+r.email+"'onblur='test();'>";
+					
+				}
+				
+				$("#h").append(tbb);
+				
+var tbc = "";
+				
+				for (var i = 0; i < m.rows.length; i++) {
+					var r = m.rows[i];
+					tbc += "<input class='span6' name='dormnum' type='text'  placeholder='格式：B4081' value='"+r.dormnum+"'>";
+				}
+				
+				$("#i").append(tbc);
+			    
+				var tbj = "";
+				
+				for (var i = 0; i < m.rows.length; i++) {
+					var r = m.rows[i];
+					tbj += "<select id='dorm'  style='width:280px;height=50px;' name='dormapt'><option value ="+r.dormapt+" >"+r.dormapt+"</option><option value ='竹一' >竹一</option> <option value ='竹二'>竹二</option>  <option value='竹三'>竹三</option>  <option value='竹四'>竹四</option> </select>";
+				}
+				
+				$("#j").append(tbj);
+		});
+		
+	});
+
+	
+    </script>
+
+
+
+</body>
+</html>

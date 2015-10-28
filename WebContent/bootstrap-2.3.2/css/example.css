@@ -1,0 +1,70 @@
+#main-nav {
+            margin-left: 1px;
+        }
+ 
+            #main-nav.nav-tabs.nav-stacked > li > a {
+                padding: 10px 8px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #4A515B;
+                background: #E9E9E9;
+                background: -moz-linear-gradient(top, #FAFAFA 0%, #E9E9E9 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#E9E9E9));
+                background: -webkit-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: -o-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: -ms-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9');
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9')";
+                border: 1px solid #D5D5D5;
+                border-radius: 4px;
+            }
+ 
+                #main-nav.nav-tabs.nav-stacked > li > a > span {
+                    color: #000;
+                }
+ 
+                #main-nav.nav-tabs.nav-stacked > li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover {
+                    color: #fff;
+                    background: #3C4049;
+                    background: -moz-linear-gradient(top, #E4EBF7 0%, #A7C1F2 100%);
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E4EBF7), color-stop(100%,#A7C1F2));
+                    background: -webkit-linear-gradient(top, #E4EBF7 0%,#A7C1F2 100%);
+                    background: -o-linear-gradient(top, #E4EBF7 0%,#A7C1F2 100%);
+                    background: -ms-linear-gradient(top, #E4EBF7 0%,#A7C1F2 100%);
+                    background: linear-gradient(top, #E4EBF7 0%,#A7C1F2 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E4EBF7', endColorstr='#A7C1F2');
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E4EBF7', endColorstr='#A7C1F2')";
+                    border-color: #2B2E33;
+                }
+ 
+                    #main-nav.nav-tabs.nav-stacked > li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover > span {
+                        color: #FFF;
+						
+                    }
+ 
+            #main-nav.nav-tabs.nav-stacked > li {
+                margin-bottom: 4px;
+            }
+ 
+        /*定义二级菜单样式*/
+        .secondmenu a {
+            font-size: 14px;
+            color: #3C4049;
+            text-align: center;
+        }
+ 
+        .navbar-static-top {
+	background-color: #B0C5ED;
+	margin-bottom: 40px;
+        }
+ 
+        .navbar-brand {
+           
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 50px;
+            color: #fff;
+			font-weight:bold;
+			font-size:36px;
+        }

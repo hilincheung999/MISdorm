@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>查询学生信息</title>
+<link href="../bootstrap-2.3.2/css/example.css" rel="stylesheet" type="text/css">
+<link href="../bootstrap-2.3.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="../bootstrap-2.3.2/js/jquery-2.1.4.js"></script>
+<script src="../bootstrap-2.3.2/js/bootstrap.js"></script>
+<script src="../bootstrap-2.3.2/js/usersearch.js"></script>
+<style type="text/css">
+h2{
+color:#fff;
+
+}
+table { border-collapse: collapse; }
+#Search{margin:0 auto;}
+body{
+	background-color:#EBFEFF;
+	}
+th { 
+    text-align:center;
+	font-size:18px;
+}
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+
+<body>
+<div class="container-fluid">
+       <div class="navbar navbar-duomi navbar-static-top" role="navigation">
+              <div class="page-header">
+               <h2><strong>查询学生信息</strong></h2>
+              </div>
+       </div>
+
+
+
+<div class="col-md-4">
+<h3><strong>请输入学号查询</strong></h3>
+<input type=text class="form-control" name="keyword" id="keyword"/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input id="btnQuery" type="submit" class="btn btn-primary" value="查询" />&nbsp;&nbsp;&nbsp;&nbsp;
+<input id="reset" class="btn btn-info" type="reset"  value="重置" />
+</div>
+<div class="col-md-4">
+<h3><strong>请选择宿舍楼查询</strong></h3>
+<select class="form-control" name="dormapt" id="dormapt">
+<option value="竹一">竹一</option> 
+<option value="竹二">竹二</option> 
+<option value="竹三">竹三</option> 
+<option value="竹四">竹四</option> 
+</select><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input id="btn" type="submit" class="btn btn-primary" value="查询" />&nbsp;&nbsp;&nbsp;&nbsp;
+<input id="reset" class="btn btn-info" type="reset"  value="重置" />
+<br/><br/><br/>
+</div>
+
+ <div id="Search">
+        <table class="table table-responsive table-bordered" >
+        <thead><tr><th>学号</th><th>姓名</th><th>宿舍楼</th><th>宿舍号</th><th>邮箱</th><th>电话</th></tr></thead>
+        <tbody>   
+        </tbody>
+        </table>
+<ul class="pager">
+<li><a href = "#" onclick="first()">首页</a></li>
+<li><a href = "#" class="previous" id="previous" onclick="previous()" >上一页</a></li>
+第<input type="text" id="page" value="1" size="3"/>页
+<li><a href = "#" class="next" id="next" onclick="next()" >下一页</a></li>
+<li><a href="#" onclick="last()">尾页</a></li>
+共<label id="total">0</label>条记录
+共<label id="pageCount">0</label>页
+</ul>
+ </div>
+</div>
+</body>
+</html>
