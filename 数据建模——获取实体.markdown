@@ -1,0 +1,127 @@
+﻿# 数据建模——获取实体
+
+
+
+---
+
+###管理员表:
+
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| username   | Varchar(50)  |  用户名，主键     |
+| password   |  Varchar(50) |   	密码  |
+| dormapt    | 	Varchar(50) |  宿舍楼号，外键  |
+
+
+---
+
+
+###学生用户表:
+
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| stunum   | Varchar(50)  |  学号，主键     |
+| stuname   |  Varchar(50) |   姓名 |
+| password    | 	Varchar(50) |  密码  |
+| dormnum   | Varchar(50)  |  宿舍号     |
+| dormapt   |  Varchar(50) |   	宿舍楼号，外键 |
+| email    | 	Varchar(50) |  邮箱  |
+| phone    | 	Int |  电话  |
+
+
+---
+
+###宿舍楼层表：
+
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| dormapt   | Varchar(50)  |  宿舍楼号，主键     |
+| admin   |  Varchar(50) |  宿舍管理员，外键|
+
+
+
+---
+
+###维修单表：
+
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| fixorder   | Varchar(50)  | 维修单编号，主键     |
+| stunum   |  Varchar(50) |  学号，外键 |
+| name    | 	Varchar(50) | 联系人姓名  |
+| dormnum   | Varchar(50)  |  宿舍号     |
+| dormapt   |  Varchar(50) |   	宿舍楼号，外键 |
+| phone    | 	Int |  电话  |
+| time    | Date |  	订单提交时间  |
+| img   |  Varchar(50) |   	图片地址 |
+| problem    | 	Varchar(200) |  问题描述 |
+| type    | Varchar(50) |  订单类型  |
+
+
+---
+
+###送水单表:
+
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| waterorder  | Varchar(50)  | 送水单编号，主键     |
+| stunum   |  Varchar(50) |  学号，外键 |
+| name    | 	Varchar(50) | 联系人姓名  |
+| dormnum   | Varchar(50)  |  宿舍号     |
+| dormapt   |  Varchar(50) |   	宿舍楼号，外键 |
+| phone    | 	Int |  电话  |
+| time    | Date |  	订单提交时间  |
+| type    | Varchar(50)|  订单类型  |
+
+
+---
+
+
+###公告信息表：
+
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| title  | Varchar(100)  | 公告标题，主键  |
+| dormapt  | Varchar(50)  | 宿舍楼号，外键 |
+| content  | Varchar(200)  | 公告内容 |
+| date  | Date  | 公告提交时间 |
+
+
+---
+
+###留言意见表:
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| title  | Varchar(100)  | 留言主题，主键  |
+| stunum | Varchar(50)  | 学号，外键|
+| name | Varchar(50)  | 留言人姓名 |
+| content | Varchar(500)  | 留言内容 |
+| date  | Date  | 留言提交时间 |
+
+
+---
+
+
+###离校申请单表：
+|  列名  |  数据类型   |  备注  |
+| --------   | -----:  | :----:  |
+| stunum  | Varchar(50)  | 学号，主键    |
+| stuname	   |  Varchar(50) |  姓名 |
+| phone    | Int | 电话 |
+| destination   |	Varchar(50) |  	去向说明  |
+| dormnum   | Varchar(50)  |  宿舍号     |
+| dormapt   |  Varchar(50) |   	宿舍楼号，外键 |
+| leavetime    | 	Date |  离校时间  |
+| backtime    | 	Date|  回校时间  |
+
+
+
+	
+		
+	
+
+
+
+
+
+
