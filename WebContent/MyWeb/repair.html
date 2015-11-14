@@ -81,39 +81,30 @@
 </nav>
 </nav>
 </div>
- <div class="container-fluid"> 
-     
-     
+ <div class="container-fluid wrap">  
      <form class="form-horizontal" action="../Repair"  method="post" enctype="multipart/form-data">
         <fieldset>
-          <h1 class="page-header"></h1>
           <div class="row-fluid">
- 
-
       <div class="control-group">
-
           <!-- Prepended text-->
-          &nbsp;&nbsp;&nbsp;&nbsp;<label class="control-label">联系人</label>
+         <label class="control-label">联系人</label>
           <div class="controls">
             <div class="input-prepend">
               <span class="add-on"></span>
-             &nbsp;&nbsp;&nbsp; <input name="name" placeholder="请输入您的姓名" id="prependedInput" type="text">
+            <input name="name" placeholder="请输入您的姓名" id="prependedInput" type="text">
             </div>
             <p class="help-block"></p>
           </div>
-
         </div>
-
-    
 
     <div class="control-group">
 
           <!-- Prepended text-->
-          &nbsp;&nbsp;&nbsp;&nbsp;<label class="control-label">联系方式</label>
+          <label class="control-label">联系方式</label>
           <div class="controls">
             <div class="input-prepend">
               <span class="add-on"></span>
-              &nbsp;&nbsp;&nbsp;&nbsp;<input name="phone" placeholder="请输入您的联系电话" type="text">
+              <input name="phone" placeholder="请输入您的联系电话" type="text">
             </div>
             <p class="help-block"></p>
           </div>
@@ -121,44 +112,41 @@
     
 
     <div class="control-group">
-
           <!-- Prepended text-->
-          &nbsp;&nbsp;&nbsp;&nbsp;<label class="control-label">预约时间</label>
+          <label class="control-label">预约时间</label>
           <div class="controls">
-            &nbsp;&nbsp;&nbsp;   <input name="time" class="Wdate" type="text" onClick="WdatePicker()">*
+             <input name="time" class="Wdate" type="text" onClick="WdatePicker()">*
             </div>
-
         </div>
         <br>
-  <div class="control-group">
-
-          &nbsp;&nbsp;&nbsp;&nbsp;<label class="control-label">问题描述</label>
+     <div class="control-group">
+          <label class="control-label">问题描述</label>
           <div class="controls">
             <div class="textarea">
-                 &nbsp;&nbsp;&nbsp;&nbsp;<textarea name="problem"> </textarea>
+                <textarea name="problem"> </textarea>
             </div>
            </div>
           </div>
           
        <div class="control-group">
-           &nbsp;&nbsp;&nbsp;<label class="control-label">选择图片</label>
-               
-          <!-- File Upload -->
-          
-            &nbsp;&nbsp;&nbsp;&nbsp; <input name="images" class="input-file" id="fileInput" type="file">
+           <label class="control-label">选择图片</label>               
+          <!-- File Upload -->   
+          <div class="choosepic">       
+            <input name="images" class="input-file" id="fileInput" type="file"/>
+             </div>
              </div>
            <br>
           <!-- Button -->
+          
           <div class="controls">
-           &nbsp;&nbsp;&nbsp; <button class="btn btn-default">提交</button>
+          <button class="btn btn-default">提交</button>
           </div>
+         
         </div> 
                
     </fieldset>
   </form>
   </div>
-
-
 <br>
 <br>
 

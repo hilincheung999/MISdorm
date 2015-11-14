@@ -17,6 +17,7 @@ html {
     height: 100%;
 }
 body{	font-size:14pt;text-align:center; width:100%; height:100%;}
+
 dl	{	margin:0;}
 dt	{color:#fff;margin:1px;padding:0;}
 dd	{	margin:3px;text-align:certer;}
@@ -51,21 +52,11 @@ h6 {
     font-weight: 400;
 	color: #111;
 }
-
-h1.h-xlight,h2.h-xlight,h3.h-xlight ,h4.h-xlight ,h5.h-xlight ,h6.h-xlight  {
-	font-weight: 200;
-}
-
-h1.h-light,h2.h-light,h3.h-light ,h4.h-light ,h5.h-light ,h6.h-light  {
-	font-weight: 300;
-}
-
-h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
-	font-weight: 600;
-}
-
-h1.font-light,h2.font-light,h3.font-light,h4.font-light,h5.font-light,h6.font-light {
-	color: #fff;
+.wrap{
+    margin:45px auto;
+	}
+.choosepic{
+   margin:20px 500px;	
 }
 .big-heading {
 	font-size: 48px;
@@ -97,6 +88,7 @@ a:focus {
     text-decoration: none;
 }
 #services .glyphicon {
+  
   border: 2px solid #FFFFFF;
   border-radius: 50%;
   display: inline-block;
@@ -164,81 +156,11 @@ a:focus {
 .margintop-45{margin-top:45px !important;}
 .margintop-50{margin-top:50px !important;}
 
-/* ===========================
---- General sections
-============================ */
-
-.home-section {
-    padding-top: 50px;
-    padding-bottom: 60px;
-	display:block;
-    position:relative;
-    z-index:120;
-}
-
-.inner-section {
-    padding-top: 110px;
-    padding-bottom: 110px;
-}
-
-
-.home-section.nopadd-bot {
-    padding-bottom: 0;
-}
-
-.color-dark .section-heading h2 {
-	color: #111;
-}
-.color-dark .section-heading p {
-	color: #444;
-}
-
-.color-dark .divider-short {
-	background: #666;
-}
-.color-dark .divider-header {
-	background: #666;
-}
-
-.color-light .divider-short {
-	background: #666;
-}
-.color-light .divider-header {
-	background: #666;
-}
-
-
-.color-light .section-heading h2 {
-	color: #fff;
-}
-.color-light .section-heading p {
-	color: #fefefe;
-}
-
-.color-light blockquote,.color-light p {
-	color: #fefefe;
-}
-
-/* --- section bg var --- */
-
-.bg-white {
-	background: #fff;
-}
-
-.bg-gray {
-	background: #f9f9f9;
-}
-
-
-.bg-dark {
-	background: #404040;
-}
-
 /* --- section color var --- */
 
 .text-light {
 	color: #fff;
-}s
+}
 
 
 /* Carousel Styles */
@@ -325,19 +247,6 @@ a:focus {
     color: #fff;
 }
 
-.header-text h2 {
-    font-size: 40px;
-}
-
-.header-text h2 span {
-	padding: 10px;
-	color: #fff;
-	text-transform: uppercase;
-}
-
-.header-text h3 span {
-	color: #fff;
-}
 
 .btn-min-block {
     min-width: 170px;
