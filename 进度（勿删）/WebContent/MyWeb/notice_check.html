@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>查看通知</title>
+<link href="../bootstrap-2.3.2/css/example.css" rel="stylesheet" type="text/css">
+<link href="../bootstrap-2.3.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="../bootstrap-2.3.2/js/jquery-2.1.4.js"></script>
+<script src="../bootstrap-2.3.2/js/bootstrap.js"></script>
+<script src="../bootstrap-2.3.2/js/notecheck.js"></script>
+<style type="text/css">
+h2{
+color:#fff;
+
+}
+body{
+	background-color:#EBFEFF;
+	}
+	th { 
+    text-align:center;
+	font-size:18px;
+}
+</style>
+<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+       <div class="navbar navbar-duomi navbar-static-top" role="navigation">
+              <div class="page-header">
+               <h2><strong>查看通知</strong></h2>
+              </div>
+       </div>
+       <div>
+       <form action="" method="post">
+        <table class="table table-responsive table-bordered" >
+        <thead><tr><th align="center">标&nbsp;&nbsp;&nbsp;&nbsp;题</th><th >内&nbsp;&nbsp;&nbsp;&nbsp;容</th><th>日&nbsp;&nbsp;&nbsp;&nbsp;期</th></tr></thead>
+        
+        
+        </table>
+        <ul class="pager">
+        <li><a href = "#" onclick="first()">首页</a></li>
+        <li><a href = "#" class="previous" id="previous" onclick="previous()" >上一页</a></li>
+                    第<input type="text" id="page" value="1" size="3"/>页
+        <li><a href = "#" class="next" id="next" onclick="next()" >下一页</a></li>
+        <li><a href="#" onclick="last()">尾页</a></li>
+                   共<label id="total">0</label>条记录
+                   共<label id="pageCount">0</label>页
+        </ul>
+        </form>
+        </div></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>发布通知</title>
+<link href="../bootstrap-2.3.2/css/example.css" rel="stylesheet" type="text/css">
+<link href="../bootstrap-2.3.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="../bootstrap-2.3.2/js/jquery-2.1.4.js"></script>
+<script src="../bootstrap-2.3.2/js/bootstrap.js"></script>
+<style type="text/css">
+h2{
+color:#fff;
+
+}
+body{
+	background-color:#EBFEFF;
+	}
+</style>
+</head>
+
+
+<body>
+ <div class="container-fluid">
+       <div class="navbar navbar-duomi navbar-static-top" role="navigation">
+              <div class="page-header">
+               <h2><strong>发布通知</strong></h2>
+              </div>
+       </div>
+       <div>
+       <form action="../noticepublish" method="get">
+        <table class="table table-responsive table-bordered" >
+        <tr><td>标&nbsp;&nbsp;题:</td><td><input type="text" name="title"placeholder="请输入通知标题"></td></tr>
+        <tr><td>内&nbsp;&nbsp;容:</td><td><textarea rows="20" cols="135" name="content" placeholder="请输入通知内容"></textarea></td></tr>
+        <tr><td></td><td align="center" class="button"><input type="submit" class="btn btn-success" value="发布"/>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="reset" class="btn btn-info" value="重填"/></td></tr>
+        </table>
+        </form>
+        </div></div>
+</body>
+</html>

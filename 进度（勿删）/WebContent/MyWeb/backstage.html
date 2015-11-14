@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>后台管理</title>
+<link href="../bootstrap-2.3.2/css/example.css" rel="stylesheet" type="text/css">
+<link href="../bootstrap-2.3.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="../bootstrap-2.3.2/js/jquery-2.1.4.js"></script>
+<script src="../bootstrap-2.3.2/js/bootstrap.js"></script>
+<script src="../bootstrap-2.3.2/js/backstage.js"></script>
+</head>
+<body>
+<div class="navbar navbar-duomi navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="page-header">
+                <font color="white" size="+5"><strong>后台管理系统</strong></font>
+                </a>
+                <ul class="nav navbar-nav navbar-right">        
+        <li class=""><a href="login.html">退出登录</a></li>
+      </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <ul id="main-nav" class="nav nav-tabs nav-stacked" style="">
+                    <li class="active">
+                        <a id="home" href="#">
+                            <i class="glyphicon glyphicon-home"></i>
+                            首页         
+                        </a>
+                    </li>
+                    <li>
+                        <a id="wuye"href="#notice" class="nav-header collapsed" data-toggle="collapse">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            物业通知管理
+                             <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul id="notice" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                            <li><a id="announcementview" href="#"><i class="glyphicon glyphicon-th-list"></i>  查看通知</a></li>
+                            <li><a id="announcementpublish" href="#"><i class="glyphicon glyphicon-edit"></i> 发布通知</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="yinyongshui"href="#water" class="nav-header collapsed" data-toggle="collapse">
+                            <i class="glyphicon glyphicon-align-justify"></i>
+                             饮用水管理
+                            <span class="pull-right glyphicon glyphicon-chevron-down"></span>       
+                        </a>
+                            <ul id="water" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                            <li><a id="water_order_undone" href="#"><i class="glyphicon glyphicon-star-empty"></i>未完成订单</a></li>
+                            <li><a id="water_done" href="#"><i class="glyphicon glyphicon-star"></i>已完成订单</a></li>
+                            <li><a id="water_search" href="#"><i class="glyphicon glyphicon-search"></i> 查询订单</a></li>
+                            </ul>
+                    </li>
+ 
+                    <li>
+                      <a id="weixiu" href="#repair" class="nav-header collapsed" data-toggle="collapse">                       
+                      <i class="glyphicon glyphicon-wrench"></i>
+                            维修管理
+  <span class="pull-right glyphicon glyphicon-chevron-down"></span>                          
+                        </a>
+                         <ul id="repair" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                            <li><a  id="fix_order_undone" href="#"><i class="glyphicon glyphicon-star-empty"></i>未完成订单</a></li>
+                            <li><a id="fix_order_done" href="#"><i class="glyphicon glyphicon-star"></i>已完成订单</a></li>
+                            <li><a id="fix_search" href="#"><i class="glyphicon glyphicon-search"></i>查询维修情况</a></li>
+                         </ul>
+                    </li>
+                     <li>
+                        <a id="chaxun" href="#search" class="nav-header collapsed" data-toggle="collapse">
+                            <i class="glyphicon glyphicon-search"></i>
+                            查询信息
+                             <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul id="search" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                            <li><a href="#" id="leaving_search"><i class="glyphicon glyphicon-user"></i>查看假期去向表</a></li>
+                            <li><a href="#" id="user_search"><i class="glyphicon glyphicon-search"></i> 查询学生信息</a></li>
+
+                        </ul>
+                    </li>
+                             <li>
+                        <a href="#" id="note"class="nav-header collapsed" data-toggle="collapse">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            查看留言板
+                        </a>
+                    </li>
+                            <li>
+                        <a href="#" id="call" class="nav-header collapsed" data-toggle="collapse">
+                        <i class="glyphicon glyphicon-phone-alt"></i>
+                            常用电话
+                        </a>
+                    </li>
+                      
+              </ul>
+            </div>             
+                <div class="col-md-10">
+                <iframe src="welcome.html" id="iframepage" name="iframepage" height="580px" frameBorder="1px" scrolling="yes" width="100%">
+                </iframe>           	
+                </div>
+            </div>
+        </div>
+  
+</body>
+</html>

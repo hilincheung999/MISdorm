@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/information/ajaxs.java=UTF-8
+encoding//src/login/LoginServlet.java=UTF-8
+encoding//src/orders/Repair.java=UTF-8
+encoding//src/orders/Showokrepair.java=UTF-8
+encoding//src/orders/Showunrepair.java=UTF-8
+encoding//src/orders/Waterpaid.java=UTF-8
+encoding//src/orders/Waterunpaid.java=UTF-8
+encoding//src/orders/queryokrepair.java=UTF-8
+encoding//src/orders/queryunrepair.java=UTF-8
+encoding//src/orders/updatefix.java=UTF-8
+encoding//src/water_show/showwater.java=UTF-8
+encoding//src/water_show/unshowwater.java=UTF-8

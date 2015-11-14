@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(250,250,250);
+    line-height: 30px;
+    text-align: center;
+}
+strong {
+	font-weight: 500;
+	color: #000;
+}
+.modal-header{background-color:rgba(158,181,139,0.9);}
+.modal-body{background-color:rgba(158,181,139,0.7);}
+.modal-footer{background-color:rgba(158,181,139,0.5);}
+
+
+/***** Top content *****/
+.Login_Background {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 63px;
+  top: 137px;
+  width: 530px;
+  height: 400px;
+  z-index: 2;
+ 
+}
+ .description {
+	margin: 20px 0 10px 0;
+}
+ p { opacity: 0.9; }
+
+.form-box {
+	margin-top: 35px;
+	
+}
+
+.form-top {
+	overflow: hidden;
+	padding: 25px 15px 15px 15px;
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+
+}
+
+.form-bottom {
+	padding: 5px 5px 30px 25px;
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+.form-bottom form button.btn {
+	width: 100%;
+}
+
+.loginlabel{
+	padding:0 25px;
+	
+}
+/***** Media queries *****/
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (max-width: 767px) {
+	
+	.inner-bg { padding: 60px 0 110px 0; }
+
+}
+
+@media (max-width: 415px) {
+	
+	h1, h2 { font-size: 32px; }
+
+}
