@@ -1,0 +1,396 @@
+﻿#  部分系统核心功能代码
+
+标签（空格分隔）： 核心代码
+
+---
+
+### 4.6 部分系统核心功能代码
+
+***1、提交维修订单***
+package orders;
+
+import JDBC.DbUtil;
+
+import com.jspsmart.upload.*;
+/**
+ * Servlet implementation class PaySuccessfully
+ */
+@WebServlet("/Repair")
+public class Repair extends HttpServlet {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private ServletConfig config;
+
+	
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        this.config = config;
+    }
+    final public ServletConfig getServletConfig() {
+        return config;
+    }
+    public Repair() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	 
+		PrintWriter out=response.getWriter();
+		ServletConfig config;
+        response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("GBK");
+	    HttpSession session=request.getSession();
+	    
+	//生成订单编号
+	    java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		java.util.Date now=new java.util.Date(); 
+		String str_date1 = formatter.format(now);
+		String year=str_date1.substring(0,4);//取第0+1位至第4位
+		String month=str_date1.substring(5,7);//取第5+1位至第7位
+		String day=str_date1.substring(8,10);//取第8+1位至第10位
+		String hour=str_date1.substring(11,13);
+		String minute=str_date1.substring(14,16);
+		String second=str_date1.substring(17,19);	
+			
+		//上传图片
+		 SmartUpload su =new SmartUpload(); 
+		 String fileExt="";
+	     String url="image/";
+	     su.initialize(getServletConfig(), request, response); 
+	    try {
+	        su.upload(); 
+	   } catch (Exception e){
+	   }
+	    try{
+	      com.jspsmart.upload.File myFile = su.getFiles().getFile(0);  
+	      fileExt= myFile.getFileExt();    
+	      String fileurl="";
+	  
+		//连接数据库后向 表-fix 插入新的订单数据
+			Connection conn=DbUtil.getConnection();
+			PreparedStatement stmt=conn.prepareStatement("insert into fix values(?,?,?,?,?,?,?,?,?,'unfinished')",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			String fixorder=year+month+day+hour+minute+second;
+			String stunum=(String) session.getAttribute("stunum");
+			String name=su.getRequest().getParameter("name");		
+			String dormapt=(String) session.getAttribute("dormapt");
+			String dormnum=(String) session.getAttribute("dormnum");
+			String phone=su.getRequest().getParameter("phone");
+			String time=su.getRequest().getParameter("time");
+			String img=myFile.getFileName();
+			String problem=su.getRequest().getParameter("problem");
+			
+			stmt.setString(1,fixorder);
+			stmt.setString(2,stunum);
+			stmt.setString(3,name);
+			stmt.setString(4,dormapt);
+			stmt.setString(5,dormnum);
+			stmt.setString(6,phone);
+			stmt.setString(7,time);
+			stmt.setString(8,img);
+			stmt.setString(9,problem);
+			
+			stmt.executeQuery();
+
+			stmt.close();
+			conn.close();
+    myFile.saveAs("/image/"+ img);
+	out.print("<script language='javascript'>alert('Successfully!');window.location.href='My web/repair.html';</script>");
+				
+		} catch (SQLException | SmartUploadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		 }
+	     }
+	   
+    }
+
+
+***2、显示已完成的送水订单***
+package orders;
+
+import eb.javaweb.DbUtil;
+
+/**
+ * Servlet implementation class A
+ */
+@WebServlet("/Waterpaid")
+public class Waterpaid extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Waterpaid() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int page = Integer.parseInt(request.getParameter("page1"));
+         //int page=0;
+		HttpSession session=request.getSession();
+		String stunum=(String) session.getAttribute("stunum");
+		
+		
+		
+		try {
+			
+			Connection conn=DbUtil.getConnection();
+			
+			response.setContentType("text/x-json");
+			PrintWriter pw = response.getWriter();
+			String j = "{\"rows\": [";
+			PreparedStatement stmt=conn.prepareStatement("select * from water where type=? and stunum=? order by time desc limit " + (page * 5) + ",5");
+			
+			stmt.setString(1,"已支付");
+			stmt.setString(2,stunum);
+			ResultSet rs= stmt.executeQuery();
+			while(rs.next()){
+				
+					
+				String waterorder=rs.getString("waterorder");
+				String name=rs.getString("name");
+				String dormapt=rs.getString("dormapt");
+				String dormnum=rs.getString("dormnum");
+				String phone=rs.getString("phone");
+				String time=rs.getString("time");
+		j += "{";
+		
+		j += "\"waterorder\": \"" +waterorder + "\", ";
+		j += "\"name\": \"" +name + "\", ";
+		j += "\"dormapt\": \"" +dormapt + "\", ";
+		j += "\"dormnum\": \"" +dormnum + "\", ";
+		j += "\"phone\": \"" +phone + "\", ";	
+		j += "\"time\": \"" + time + "\"";
+		
+		j += "}";
+		
+		j += ", ";
+		
+		
+		
+			}
+			if (j != "{\"rows\": [") {
+				j = j.substring(0, j.length() - 2);
+			}
+
+			String sql = "select count(*) as c from water where type=? and stunum=?";
+			stmt=conn.prepareStatement(sql);
+			stmt.setString(1, "已支付");
+			stmt.setString(2,stunum);
+			rs= stmt.executeQuery();
+			String c = "";	
+			if (rs.next()) {			
+				c = rs.getString("c");	
+			}		
+			j += "], \"total1\": " + c + "}";
+			 
+			pw.print(j);
+		//	pw.print(c);
+			System.out.println(j);
+			System.out.println(c);
+			
+			
+			stmt.close();
+			pw.close();
+			conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+}
+***3、添加留言***
+package note;
+import java.text.SimpleDateFormat;
+/**
+ * Servlet implementation class note_add
+ */
+@WebServlet("/note_add")
+public class note_add extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public note_add() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String title=request.getParameter("title");
+		String author=request.getParameter("author");
+		String content=request.getParameter("content");
+		HttpSession session=request.getSession();
+		String stunum=(String) session.getAttribute("stunum");
+		Statement stmt = null;
+		try
+			{   
+			
+			    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");  
+			    String date = formatter.format(new java.util.Date());  
+				
+			    PrintWriter out=response.getWriter();
+			    out.println(date);
+			    Connection conn=DbUtil.getConnection();
+				stmt = conn.createStatement();
+				stmt.executeUpdate("insert into suggestion(stunum,title,name,content,date) values('"+stunum+"','"+title+"','"+author+"','"+content+"','"+date+"')");
+				stmt.close(); 	 	
+				conn.close();
+			
+			}
+			catch(Exception ex)
+			{
+				System.out.println(ex.toString());
+			}
+	}
+
+}
+***4、填写离校申请***
+import eb.javaweb.DbUtil;
+
+/**
+ * Servlet implementation class leaveschool
+ */
+@WebServlet("/leaveschool")
+public class leaveschool extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public leaveschool() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session=request.getSession();
+		String stunum=(String) session.getAttribute("stunum");
+
+		String stuname=(String) session.getAttribute("stuname");
+		String dormapt=(String) session.getAttribute("dormapt");
+		String dormnum=(String) session.getAttribute("dormnum");
+
+		String leavetime=request.getParameter("leavetime");
+		String backtime=request.getParameter("backtime");
+		String phone=request.getParameter("phone");
+		String destination=request.getParameter("destination");
+		//String stuname="jdaskjd";
+		//String stunum="09133";
+		//String dormapt="09133";
+		//String dormnum="09133";
+		if (leavetime!=null&& !leavetime.equals("") && backtime!=null &&!backtime.equals("") && phone!=null&&! phone.equals("") && destination!=null&&!destination.equals("") ){
+	try {
+		Connection conn=DbUtil.getConnection();
+		
+		
+		PreparedStatement stmt;
+stmt = conn.prepareStatement("insert into destination values(?,?,?,?,?,?,?,?)",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+		stmt.setString(1,stunum);
+		stmt.setString(2,stuname);
+		stmt.setString(3,phone);
+		stmt.setString(4,dormapt);
+		stmt.setString(5,dormnum);
+		stmt.setString(6,destination);
+
+		stmt.setString(7,leavetime);
+		stmt.setString(8,backtime);
+		
+		
+		stmt.executeQuery();
+		
+		stmt.close();
+		conn.close();
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter ab=response.getWriter();
+		
+ab.print("<script language='javascript'>alert('提交申请单成功!');window.location.href='MyWeb/leaveschool.html';</script>");
+
+		ab.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	}
+		else{
+			request.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter ab=response.getWriter();
+			
+ab.print("<script language='javascript'>alert('提交失败，请重新提交！');window.location.href='MyWeb/leaveschool.html';</script>");
+
+			ab.close();
+			
+		}
+	}
+	
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+}
+
+
+---
+
+ 
+
+
+
+
